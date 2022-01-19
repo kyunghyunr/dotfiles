@@ -13,7 +13,7 @@ local moonlight = {
 	orange =        '#f67f81',
 	pink =          '#ecb2f0',
 
-	bg =            '#00ff0000',
+	bg =            '#00ff0000', -- '#212337'
 	bg_alt =        '#1B1E2B',
 	fg =            '#e4f3fa',
 	text =          '#757dac',
