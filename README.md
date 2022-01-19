@@ -13,4 +13,4 @@
 11. install -g less
 12. install -g less-watch-compiler
 13. install -g less-plugin-clean-css
-14. npm install -g nodemon
+14. npm install -g pm2
