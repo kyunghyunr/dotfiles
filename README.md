@@ -14,3 +14,4 @@
 12. install -g less-watch-compiler
 13. install -g less-plugin-clean-css
 14. npm install -g pm2
+15. Install MySQL
