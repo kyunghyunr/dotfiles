@@ -9,9 +9,9 @@
 7. tmux install  - don't forget {sudo sh install.sh}
 8. nvim install { $ sudo ln -sf nvim vim } & restart neovim 
 9. 최신버전 업데이트
-   sudo add-apt-repository ppa:neovim-ppa/unstable
-   sudo apt-get update
-   sudo apt-get install neovim
+   sudo add-apt-repository ppa:neovim-ppa/unstable <br>
+   sudo apt-get update <br>
+   sudo apt-get install neovim <br>
 9. vim-plug install 
 10. sudo npm install -g clean-css 
 11. sudo npm install -g less
