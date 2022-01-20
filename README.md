@@ -7,7 +7,7 @@
 5. oh-my-zsh install
 6. powerlevel10k install
 7. tmux install
-8. nvim install { $ sudo ln -s which nvim /usr/local/bin/vim } & restart
+8. nvim install { $ sudo ln -s nvim /usr/local/bin/vim } & restart
 9. vim-plug install 
 10. sudo npm install -g clean-css 
 11. sudo npm install -g less
