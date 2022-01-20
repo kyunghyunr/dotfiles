@@ -53,6 +53,6 @@ nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
 
 " true color
   "use moonlight
-  let g:neosolarized_termtrans=1
+  let g:moonlight_termtrans=1
   runtime ./colors/moonlight.vim
   colorscheme moonlight

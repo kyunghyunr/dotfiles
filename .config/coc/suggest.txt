@@ -1,2 +1,0 @@
-Co|Cocinstall|around
-Coc|Cocinstall|around
