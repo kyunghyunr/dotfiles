@@ -12,7 +12,10 @@
    sudo add-apt-repository ppa:neovim-ppa/unstable <br>
    sudo apt-get update <br>
    sudo apt-get install neovim <br>
-9. vim-plug install 
+   vim-plug install <br>
+   npm install <br>
+   node js 최신업데이트는 n 프로그램을 이용한다 sudo lts 명령어 <br>
+    
 10. sudo npm install -g clean-css 
 11. sudo npm install -g less
 12. sudo npm install -g less-watch-compiler
