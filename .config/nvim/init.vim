@@ -73,6 +73,7 @@ nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
 "Cocinstall coc-json
 "Cocinstall coc-tsserver
 "CocInstall coc-sql
+"CocInstall coc-scssmodules
 
 " true color
   "use moonlight
