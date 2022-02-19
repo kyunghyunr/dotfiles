@@ -34,4 +34,4 @@ if [ $? != 0 ]
 	tmux new-session -s live -n temp -d 
 fi
 
-tmux attach -t live
+#tmux attach -t live
