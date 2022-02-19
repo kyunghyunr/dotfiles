@@ -30,7 +30,8 @@ if [ $? != 0 ]
 	tmux send-keys -t $SESSIONNAME:status.2 "node-sass -w scss/mobile_style.scss css/mobile_style.css --output-style compressed" C-m
 #	tmux select-pane -t 3
 #	tmux send-keys -t $SESSIONNAME:status.3 "3"
-	tmux select-window -t status
+#	tmux select-window -t status
+	tmux new-session -s live -n temp -d 
 fi
 
-#tmux attach -t $SESSIONNAME
+tmux attach -t live
