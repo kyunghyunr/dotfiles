@@ -19,10 +19,10 @@ if [ $? != 0 ]
 	tmux send-keys -t $SESSIONNAME:status.1 "watch sensors" C-m
 	tmux select-pane -t 2
 	tmux send-keys -t $SESSIONNAME:status.2 "htop" C-m
-	tmux select-pane -t 3
-	tmux send-keys -t $SESSIONNAME:status.3 "nyancat" C-m
-	#tmux select-pane -t 4
-	#tmux send-keys -t $SESSIONNAME:status.4 "" C-m
+	#tmux select-pane -t 3
+	#tmux send-keys -t $SESSIONNAME:status.3 "" C-m
+	tmux select-pane -t 4
+	tmux send-keys -t $SESSIONNAME:status.4 "nyancat" C-m
 
 	tmux select-window -t te5t
 	tmux split-window -v
