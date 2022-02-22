@@ -46,8 +46,8 @@ if [ $? != 0 ]
 	tmux select-pane -t 1
 	tmux split-window -h
 	tmux select-pane -t 1
-	tmux send-keys -t $SESSIONNAME:status.1 "cd /opt/blog" C-m
-	tmux send-keys -t $SESSIONNAME:status.1 "bundle exec jekyll serve" C-m
+	#tmux send-keys -t $SESSIONNAME:status.1 "cd /opt/o5e.org" C-m
+	#tmux send-keys -t $SESSIONNAME:status.1 "bundle exec jekyll serve" C-m
 
 	tmux new-session -s live -n temp -d 
 fi
