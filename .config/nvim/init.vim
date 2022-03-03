@@ -37,7 +37,7 @@ call plug#begin()
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'cohama/lexima.vim'
-Plug 'https://github.com/preservim/nerdtree' " NerdTree
+"Plug 'https://github.com/preservim/nerdtree' " NerdTree
 Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
@@ -47,14 +47,36 @@ Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple c
 Plug 'mattn/emmet-vim' " html auto tag
 Plug 'https://github.com/Yggdroot/indentLine.git' " ident guides
 Plug 'prettier/vim-prettier' 
+" - telescope
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 call plug#end()
 
-"nerdTree set
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <silent> ;f <cmd>Telescope find_files<cr>
+nnoremap <silent> ;r <cmd>Telescope live_grep<cr>
+nnoremap <silent> \\ <cmd>Telescope buffers<cr>
+nnoremap <silent> ;; <cmd>Telescope help_tags<cr>
 
-let g:NERDTreeDirArrowExpandable="+"
-let g:NERDTreeDirArrowCollapsible="~"
+lua <<EOF
+local actions = require('telescope.actions')
+require('telescope').setup{
+  defaults = {
+    mappings = {
+      n = {
+        ["q"] = actions.close
+      },
+    },
+  }
+}
+EOF
+
+""nerdTree set
+"nnoremap <C-t> :NERDTreeToggle<CR>
+"
+"let g:NERDTreeDirArrowExpandable="+"
+"let g:NERDTreeDirArrowCollapsible="~"
 
 "tagbar set
 nmap <F8> :TagbarToggle<CR>
