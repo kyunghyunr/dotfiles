@@ -1,3 +1,4 @@
+" Default Set
 :set number
 :set autoindent
 :set tabstop=4
@@ -6,11 +7,11 @@
 :set softtabstop=4
 :set foldmethod=marker
 :set encoding=UTF-8
-:set completeopt-=preview " For No Previews
-" :set mouse=a	
+:set completeopt-=preview    " For No Previews
+" :set mouse=a     " You can use mouse on vim	
 
 "------------------------------
-" Windows
+" Windows shortcut keys
 
 " Split window
 nmap ss :split<Return><C-w>w
@@ -30,17 +31,46 @@ nmap <C-w><left> <C-w><
 nmap <C-w><right> <C-w>>
 nmap <C-w><up> <C-w>+
 nmap <C-w><down> <C-w>-
+
 "------------------------------
+" Netrw toggle setup
+let g:netrw_banner = 0
+
+let g:NetrwIsOpen=0
+
+function! ToggleNetrw()
+    if g:NetrwIsOpen
+        let i = bufnr("$")
+        while (i >= 1)
+            if (getbufvar(i, "&filetype") == "netrw")
+                silent exe "bwipeout " . i 
+            endif
+            let i-=1
+        endwhile
+        let g:NetrwIsOpen=0
+    else
+        let g:NetrwIsOpen=1
+        silent Lexplore
+    endif
+endfunction
+
+" Add your own mapping. For example:
+noremap <silent> <C-E> :call ToggleNetrw()<CR>
+
+"******************************
+"==============================
+" Plug Install
 
 call plug#begin()
 	
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'cohama/lexima.vim'
+Plug 'blueyed/vim-diminactive'    " Highlight the window with the cursor
 "Plug 'https://github.com/preservim/nerdtree' " NerdTree
+"Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
-Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation  'brew install ctags'
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
@@ -54,6 +84,11 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons' " File icons
 
 call plug#end()
+"==============================
+"******************************
+
+"------------------------------
+" Telescope shortcut keys
 
 nnoremap <silent> ;f <cmd>Telescope find_files<cr>
 nnoremap <silent> ;r <cmd>Telescope live_grep<cr>
@@ -73,12 +108,14 @@ require('telescope').setup{
 }
 EOF
 
+"------------------------------
 ""nerdTree set
 "nnoremap <C-t> :NERDTreeToggle<CR>
 "
 "let g:NERDTreeDirArrowExpandable="+"
 "let g:NERDTreeDirArrowCollapsible="~"
 
+"------------------------------
 "tagbar set
 nmap <F8> :TagbarToggle<CR>
 
@@ -91,6 +128,7 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 
 " coc
 nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
+" Conc Install language list
 "CocInstall coc-css
 "Cocinstall coc-html
 "Cocinstall coc-json
